@@ -13,8 +13,15 @@ const config = {
   }
 }
 
-function preload() {}
+function preload() {
+  this.load.image('sky', 'assets/sky.png');
+  this.load.image('bird', 'assets/bird.png')
+}
 
-function create() {}
+function create() {
+  const { width, height } = config;
+  this.add.image(0, 0, 'sky').setOrigin(0, 0);
+  this.add.sprite(width / 10, height/2, 'bird').setOrigin(0);
+}
 
 new Phaser.Game(config);
